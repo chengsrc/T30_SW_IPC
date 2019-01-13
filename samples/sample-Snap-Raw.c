@@ -13,6 +13,7 @@
 #include "sample-common.h"
 
 #define TAG "Sample-Snap-RAW"
+
 extern struct chn_conf chn[];
 
 int main(int argc, char *argv[])
@@ -23,7 +24,7 @@ int main(int argc, char *argv[])
 	IMPFSChnAttr fs_chn_attr[2];
 	FILE *fp;
 
-	fp = fopen("/tmp/snap.raw", "wb");
+	fp = fopen("snap.raw", "wb");///tmp/snap.raw
 	if(fp == NULL) {
 		IMP_LOG_ERR(TAG, "%s(%d):open error !\n", __func__, __LINE__);
 		return -1;
@@ -65,6 +66,8 @@ int main(int argc, char *argv[])
 	}
 
 	fs_chn_attr[0].pixFmt = PIX_FMT_RAW;
+	IMP_LOG_DBG(TAG, "IMP_FrameSource:picWidth=%d,picHeight=%d,crop.width=%d,crop.height=%d\n",
+		fs_chn_attr[0].picWidth,fs_chn_attr[0].picHeight,fs_chn_attr[0].crop.width,fs_chn_attr[0].crop.height);
 	ret = IMP_FrameSource_SetChnAttr(0, &fs_chn_attr[0]);
 	if (ret < 0) {
 		IMP_LOG_ERR(TAG, "%s(%d):IMP_FrameSource_SetChnAttr failed\n", __func__, __LINE__);

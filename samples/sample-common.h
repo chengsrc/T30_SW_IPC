@@ -23,7 +23,7 @@ extern "C"
 #define SENSOR_FRAME_RATE_NUM		25
 #define SENSOR_FRAME_RATE_DEN		1
 
-#define SENSOR_JXF23
+#define SENSOR_OV2735B
 //#define SENSOR_SC2135
 
 #if defined SENSOR_AR0141

@@ -213,7 +213,7 @@ int sample_system_init()
     IMP_ISP_Tuning_SetSharpness(128);
     IMP_ISP_Tuning_SetSaturation(128);
     IMP_ISP_Tuning_SetBrightness(128);
-#if 1
+#if 0
     ret = IMP_ISP_Tuning_SetISPRunningMode(IMPISP_RUNNING_MODE_DAY);
     if (ret < 0){
         IMP_LOG_ERR(TAG, "failed to set running mode\n");
